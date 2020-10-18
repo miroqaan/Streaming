@@ -11,7 +11,7 @@ function error_404(response){
 function onRequest(request, response) {
     if (request.method == 'GET' && request.url == '/') {
         response.writeHead(200, {'Content-Type' : 'text/html; charset=utf-8'});
-        fs.createReadStream("../client/userinfo.html").pipe(response);
+        fs.createReadStream("../client/index.html").pipe(response);
     } else {
         response.writeHead(404,{'Content-Type':'text/plain'});
         response.write(request.method);
